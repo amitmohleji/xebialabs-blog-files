@@ -32,26 +32,6 @@ background-color: #ffffff;
 <body>
 <p><b><i>${task.description}</i></b> to <b><i>${deployedApplication.environment.name}</i></b> has Failed.</p>
 
-<#if deployedApplication.version.satisfiesChangeTicketNumber?? >
-<table class='gridtable'>
-   <tr>
-     <th align='left' bgcolor='lightgrey'>Change</th>
-     <td align='right'>${deployedApplication.version.satisfiesChangeTicketNumber}</td>
-   </tr>
-   <#if deployedApplication.version.satisfiesChangeTaskNumberQA?? >
-   <tr>
-     <th align='left' bgcolor='lightgrey'>QA Task</th>
-     <td align='right'>${deployedApplication.version.satisfiesChangeTaskNumberQA}</td>
-   </tr>
-   </#if>
-   <#if deployedApplication.version.satisfiesChangeTaskNumberPROD?? >
-   <tr>
-     <th align='left' bgcolor='lightgrey'>PROD Task</th>
-     <td align='right'>${deployedApplication.version.satisfiesChangeTaskNumberPROD}</td>
-   </tr>
-   </#if>
-</table>
-</#if>
 
 <p>Deployment started at ${task.startDate} <#if (task.completionDate)?? > and completed at ${task.completionDate}<#else> and didn't complete</#if>.</p>
 

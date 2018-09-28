@@ -34,7 +34,7 @@ background-color: #ffffff;
 
 
 <#if task.state == "EXECUTED">
-<p>Deployment started at ${task.startDate} and completed at ${task.completionDate}.</p>
+<p>Deployment started at ${task.startDate} <#if (task.completionDate)?? > and completed at ${task.completionDate}.</p> <#if>
 
 <p>Task comprises of following steps:</p>
 
